@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registration-number.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <title>Registration Numbers</title>
+</head>
+<header>
+    <script type="text/x-template" class="userTemplate">
+        {{#each registration}}
+        <!-- <p class=""> -->
+          {{this}}
+        <!-- </p> -->
+        {{/each}}
+    </script>
+
+  </header>
+<body class="displayFormat">
+    <section class="original">
+        <section class="textInput">
+            <div class="blockItems">
+                <h1>Registration Numbers</h1>
+                <div class="flexItems">
+    
+                    <div class="button">
+                        <button class="reset">Reset</button>
+                    </div>
+    
+                    <div class="reg-input">
+                        <p class="errors"></p>
+                        <p class="success"></p>
+                        <div class="textArea">
+                   <label for="">Enter Your Registration Number:</label><input type="text" class="input" placeholder="Example : CA-11111 / CA-123-456 / CA-000000">
+                </div>
+                    </div><div class="button">
+                        <button class="addButton">Add</button>
+                    </div>  
+            
+                </div>
+    
+                <div class="twoButtons">
+                    <div class="filterDisplay">
+                    <div class="selectTown">
+                        <div class="filter">
+                           Filter Town: <select class="town">
+                                <option class="value" value="">Select Town</option>
+                                <option class="value" name="filter" value="Cape Town">Cape Town</option>
+                                <option class="value" name="filter" value="Paarl">Paarl</option>
+                                <option class="value" name="filter" value="Bellville">Bellville</option>
+                                <option class="value" name="filter" value="Stellenbosch">Stellenbosch</option>
+                            </select>
+                        </div>  <div class="listButton">        
+                            <div class="button">
+                                <button class="clear">Clear Filter</button>
+                            </div>
+                        </div> 
+    
+                    </div>
+                   
+                    </div>
+                  
+                </div>
+             
+            </div>
+        </section>
+        <section class="registrations">
+                          
+            <ul class="displayTown" >     
+                
+            </ul>    
+        </section>
+        <section >
+            <div class="button hey">
+                <p class="test"><a href="test.html">See Tests For the Registration Project</a></p>
+                
+            </div> 
+        </section>
+    </section>
+
+
+    <!-- TEMPLATE SETUP -->
+    <section class="template">
+        <section class="textInput">
+            <div class="blockItems">
+                <h1>Registration Numbers</h1>
+                <div class="flexItems">
+    
+                    <div class="button">
+                        <button class="reset resetTempBtn">Reset</button>
+                    </div>
+    
+                    <div class="reg-input">
+                        <p class="errors tempErrors"></p>
+                        <p class="success tempSuccess"></p>
+                        <div class="textArea">
+                   <label for="">Enter Your Registration Number Here:</label>
+                   <input type="text" class="input tempInput"  placeholder="Example : CA-11111 / CA-123-456 / CA-000000">
+                </div>
+                    </div><div class="button">
+                        <button class=" addTempBtn">Add</button>
+                    </div>  
+            
+                </div>
+    
+                <div class="twoButtons">
+                    <div class="filterDisplay">
+                    <div class="selectTown">
+                        <div class="filter tempFilter">
+                           Filter Town: <select class="town townTemp">
+                                <option class="value tempValue"   value="">Select Town</option>
+                                <option class="value" name="filter filterTemplate" value="Cape Town">Cape Town</option>
+                                <option class="value" name="filter filterTemplate" value="Paarl">Paarl</option>
+                                <option class="value" name="filter filterTemplate" value="Bellville">Bellville</option>
+                                <option class="value" name="filter filterTemplate" value="Stellenbosch">Stellenbosch</option>
+                            </select>
+                        </div>  <div class="listButton">        
+                            <div class="button">
+                                <button class="clear clearTempBtn">Clear Filter</button>
+                            </div>
+                        </div> 
+    
+                    </div>
+                   
+                    </div>
+                  
+                </div>
+             
+            </div>
+        </section>
+        <!-- <section class="registrations"> -->
+                          
+            <ul class="displayTownTemp" >          
+                
+            </ul>    
+        <!-- </section> -->
+        <section >
+            <div class="button hey">
+                <p class="test"><a href="test.html">See Tests For the Registration Project</a></p>
+                
+            </div> 
+        </section>
+    </section>
+
+    
+   <script src="reg-factory.js"></script>
+   <script src="temp-fac-fun.js"></script>
+   <script src="reg.js"></script>
+</body>
+</html>
