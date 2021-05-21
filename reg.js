@@ -131,4 +131,3 @@ function refreshPage(){
     userReg.forEach(displayRegNumbers);
 
 }refreshBtnElement.addEventListener('click', refreshPage)
-
