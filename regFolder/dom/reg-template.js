@@ -6,7 +6,7 @@ if(localStorage['townsTemplate']) {
 }
 
 // CREATING AN INSTANCE FOR A FACTORY FUNCTION
-var registrationTempInstanceFactory = registrationFactoryFunction();
+var registrationTempInstanceFactory = registrationTemplateFactoryFunction();
 
 document.addEventListener('DOMContentLoaded', function(){
 // INPUT ELEMENT
@@ -49,12 +49,16 @@ function getUserRegistrations(){
                 setTimeout(function(){
                     errorTempMsgElement.innerHTML = "";
                 }, 2000)
-            }
+            }else if(!reg){
 
+                errorTempMsgElement.innerHTML = reg + correctFormat;
+                
+                setTimeout(function(){
+                    errorTempMsgElement.innerHTML = "";
+                }, 2000)           
+          }
     townTempList.forEach(function(reg){
-        // userList = []
-       
-        // for(var i = 0; i<reg.length; i++){
+        
         if(registrationTempInstanceFactory.checkRegNumbers(reg)) {
             registrationTempInstanceFactory.regList(reg);
             userList.push(reg);
@@ -75,6 +79,7 @@ function getUserRegistrations(){
     localStorage.setItem('townsTemplate', userList);
     console.log(userList)
     inputTempTownElement.value = "";
+    
     townTempOptionsElement.selectedIndex = 0;
 
     displayTempTownElement.innerHTML = template ({ registration : userList});
@@ -85,13 +90,13 @@ addButtonTempElement.addEventListener("click", getUserRegistrations)
 
 townTempOptionsElement.onchange = function() {
 
-    var townFiltered = townTempOptionsElement.selectedIndex;
+    var townTempFiltered = townTempOptionsElement.selectedIndex;
 
-    var regAvailable = townTempOptionsElement.options[townFiltered].value;
+    var regTempAvailable = townTempOptionsElement.options[townTempFiltered].value;
 
-    var filterResults = registrationTempInstanceFactory.registrations(regAvailable);
+    var filterTempResults = registrationTempInstanceFactory.registrationsTemp(regTempAvailable);
    
-    displayTempTownElement.innerHTML = template ({ registration : filterResults});
+    displayTempTownElement.innerHTML = template ({ registration : filterTempResults});
 
    
 }
@@ -108,7 +113,7 @@ resetTempButtonElement.addEventListener("click", resetReg)
 function refreshPage(){
  
     townTempOptionsElement.selectedIndex = 0;
-   displayTempTownElement.innerHTML = userList;
+   displayTempTownElement.innerHTML = template ({ registration : userList});
 
 }
 refreshTempBtnElement.addEventListener('click', refreshPage)
