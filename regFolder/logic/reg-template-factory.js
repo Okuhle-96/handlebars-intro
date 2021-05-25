@@ -1,6 +1,7 @@
 function registrationTemplateFactoryFunction() {
 
     var capeCities = [];
+    var userList = [];
   
     var townsTemplate = {
       'CJ' : 'Paarl',
@@ -22,7 +23,7 @@ function registrationTemplateFactoryFunction() {
     var invalidRegNums = [];
   
     function regList(inputTempReg) {
-      userReg.unshift(inputTempReg);
+      userList.unshift(inputTempReg);
     }
   
     function inputTown(town){
@@ -44,7 +45,7 @@ function registrationTemplateFactoryFunction() {
             }
         }
        
-      userReg.forEach(function(car) {
+      userList.forEach(function(car) {
           if(car.startsWith(str)) {
            townTempFiltered.push(car);
            }
@@ -72,8 +73,8 @@ function registrationTemplateFactoryFunction() {
   
     function checkRegNumbers(reg) {
     
-      if(/^((CJ|CY|CL|CA)\-([0-9]){3}\-([0-9]){3})$/.test(reg) || /^((CJ|CY|CL|CA)\-([0-9]){6})$/.test(reg) || /^((CJ|CY|CL|CA)\-([0-9]){5})$/.test(reg)) {
-        userReg.forEach(function(car){
+      if(/^((CJ|CY|CL|CA)\s([0-9]){3}\-([0-9]){3})$/.test(reg) || /^((CJ|CY|CL|CA)\-([0-9]){6})$/.test(reg) || /^((CJ|CY|CL|CA)\-([0-9]){5})$/.test(reg)) {
+        userList.forEach(function(car){
           if(car == reg) {
             invalidRegistrations++;
             duplicates.push(reg);

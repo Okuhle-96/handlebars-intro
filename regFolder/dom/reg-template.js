@@ -97,9 +97,25 @@ townTempOptionsElement.onchange = function() {
     var filterTempResults = registrationTempInstanceFactory.registrationsTemp(regTempAvailable);
    
     displayTempTownElement.innerHTML = template ({ registration : filterTempResults});
-
-   
 }
+
+
+// function filterTownTemplate(){
+//     var filterTemp = document.querySelector('.value:checked')
+//     if (filterTemp){
+      
+//         var checkfilter = createTemp.regfilter(filterTemp.value)
+//         console.log('ínside')
+//         if (checkfilter.length == 0){
+//             errr.innerHTML = filterTemp.value +' has no registration number plates!'
+//             error()
+//         }
+//       regNumbersListTemp.innerHTML = compiledNuPlate({numberListTemplate: checkfilter})
+//     }else {
+//         displayTempTownElement.innerHTML = 'Select Town First Please!'
+       
+//     }
+// }townTempOptionsElement.addEventListener('click', filterTownTemplate)
 
 // CLEAR TOWNS IN DOM AND STORAGE
 function resetReg(){

@@ -33,7 +33,7 @@
                         <p class="errors"></p>
                         <p class="success"></p>
                         <div class="textArea">
-                   <label for="">Enter Your Registration Number:</label><input type="text" class="input" placeholder="Example : CA-11111 / CA-123-456 / CA-000000">
+                   <label for="">Enter Your Registration Number:</label><input type="text" class="input" placeholder="Example : CA-11111 / CA 123-456 / CA-000000">
                 </div>
                     </div><div class="button">
                         <button class="addButton">Add</button>
@@ -98,7 +98,7 @@
                         <p class="success tempSuccess"></p>
                         <div class="textArea">
                    <label for="">Enter Your Registration Number Here:</label>
-                   <input type="text" class="input tempInput"  placeholder="Example : CA-11111 / CA-123-456 / CA-000000">
+                   <input type="text" class="input tempInput"  placeholder="Example : CA-11111 / CA 123-456 / CA-000000">
                 </div>
                     </div><div class="button">
                         <button class=" addTempBtn">Add</button>
@@ -153,3 +153,29 @@
    <script src="./regFolder/dom/reg.js"></script>
 </body>
 </html>
+
+<!-- Handlebars.registerHelper('each_female', function(list, opts) {
+    var i, result = '';
+    for(i = 0; i < list.length; ++i)
+        if(list[i].gender == 'female')
+            result = result + opts.fn(list[i]);
+    return result;
+});
+
+{{#each_female profile}}
+    {{from}} {{gender}}
+{{/each_female}}
+Or a bit more general:
+
+Handlebars.registerHelper('each_when', function(list, k, v, opts) {
+    console.log(arguments);
+    var i, result = '';
+    for(i = 0; i < list.length; ++i)
+        if(list[i][k] == v)
+            result = result + opts.fn(list[i]);
+    return result;
+});
+
+{{#each_when profile "gender" "female"}}
+    {{from}} {{gender}}
+{{/each_when}} -->
